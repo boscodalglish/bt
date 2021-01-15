@@ -74,7 +74,7 @@ export function Search() {
                 <div className="search">
                     <div className="searchResults">
                         {loading && !errorMessage ? (<h1 className="loading">loading...</h1>) : errorMessage ? (
-                            <div className="errorMessage">{errorMessage}</div>
+                            <div className="nodata"><h1 className=""><span>API broken</span></h1></div>
                         ) : dataempty ? (<div className="nodata"><h1 className=""><span>No Data</span></h1></div>) : <Suggestions results={results} />}
                     </div>
                 </div>

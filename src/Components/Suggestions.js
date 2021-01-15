@@ -10,6 +10,9 @@ const Search = (props) => {
         return dateString = dateString.split(' ').slice(0, 4).join(' ');
     }
 
+    if(props.results === undefined) {
+        options = (<h1>No Data</h1>)
+    }else {
     options = results.map((r, index) => (
         <div key={index} className="searchResults-item">
             <div className="card">
@@ -34,7 +37,7 @@ const Search = (props) => {
             </div>
         </div>
     ))
-
+    }
     return (
         <>
             {options}
