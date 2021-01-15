@@ -1,0 +1,569 @@
+/*Variables*/
+
+$bt-color: #5514b4;
+$font-hf: #ffffff;
+$bt-b: #333333;
+
+$font-family: "Calibri",
+sans-serif;
+/*Resolution*/
+
+$media: screen;
+$feature_min: min-width;
+$feature_max: max-width;
+$value_one: 767px;
+$value_two: 768px;
+$value_three: 991px;
+$value_four: 992px;
+$value_five: 1199px;
+$value_six: 1650px;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family;
+  padding: 0;
+  margin: 0;
+  color: $bt-b;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $bt-b;
+  font-weight: 500;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+  }
+
+  a[href]::after {
+    content: " ("attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " ("attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid $font-hf;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  appearance: none;
+
+  &:focus {
+    outline: 3px solid $bt-color !important;
+    border-color: $bt-color !important;
+  }
+}
+
+//Common
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.flexcontainer {
+  @include flexbox();
+}
+
+// Header
+.header {
+  background-color: $bt-color;
+  color: $font-hf !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $font-hf !important;
+}
+
+// Search
+.search {
+  min-height: 850px;
+
+  .searchArea {
+    width: 600px;
+    display: inline-block;
+
+    .searchBoxTop {
+      position: relative;
+      margin: 40px 20px;
+      flex: 0 1 auto;
+      align-self: flex-start;
+
+      button[type="submit"],
+      input[type="submit"] {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 100;
+        border: 1px solid $font-hf;
+        background: $bt-color;
+        color: $font-hf;
+        text-transform: uppercase;
+        border: none;
+        margin-top: 40px;
+        padding: 20px;
+        letter-spacing: 10px;
+      }
+    }
+  }
+
+  .searchResults {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    min-height: 550px;
+    list-style: none;
+
+    .loading {
+      text-align: center;
+      width: 100%;
+    }
+
+    .nodata {
+      text-align: center;
+      width: 100%;
+    }
+
+    .searchResults-item {
+      padding: 5px;
+      flex: 0 1 auto;
+      height: auto;
+      position: relative;
+      line-height: 150px;
+      color: $bt-b;
+      font-family: $font-family;
+      text-align: center;
+
+      .card {
+        margin: auto;
+        width: 350px;
+        height: 530px;
+        overflow: hidden;
+        border-radius: 20px;
+        background: $font-hf;
+        margin-top: 50px;
+        transition: all 0.2s;
+        box-shadow: 5px 5px 15px $bt-b;
+
+        .example_e {
+          border: none;
+          background: $bt-color;
+          color: #ffffff !important;
+          font-weight: 100;
+          padding: 20px;
+          bottom: 0;
+          text-transform: uppercase;
+          border-radius: 6px;
+          height: 30px;
+          width: 80px;
+          position: relative;
+          transition: all 0.3s ease 0s;
+        }
+
+        h1 {
+          font-size: 20px;
+          font-weight: bold;
+          text-align: left;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          white-space: pre-line;
+        }
+
+        h3 {
+          font-size: 13px;
+          text-align: left;
+        }
+
+        h4 {
+          font-size: 15px;
+          text-align: left;
+          line-height: 1.6em;
+          margin-top: 20px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          /* number of lines to show */
+          -webkit-box-orient: vertical;
+          white-space: pre-line;
+        }
+
+        span {
+          display: block;
+          padding: 0.4em 0;
+        }
+
+        .btn {
+          margin: 1rem;
+          color: $font-hf;
+          background-color: $bt-color;
+          position: relative;
+          margin-top: 10px;
+          bottom: 0;
+
+          a {
+            text-decoration: none;
+          }
+
+          &.btn-jelly {
+            &:hover {
+              animation: jelly 0.5s;
+            }
+          }
+        }
+      }
+
+      .card:hover {
+        box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+        transform: translate(-5px, -5px);
+      }
+
+      .img-cover {
+        position: relative;
+      }
+
+      img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+    }
+
+    .searchResults-desc {
+      padding: 1.5em;
+    }
+  }
+
+  /* Medium screens */
+  @media only #{$media} and ($feature_min : $value_two) and ($feature_max : $value_three) {
+    .searchResults {
+      /* On small screens, we are no longer using row direction but column */
+      flex-flow: row wrap;
+      justify-content: center;
+      flex: 0 0 100%;
+      min-height: 550px;
+
+      .searchResults-item {
+        padding: 5px;
+        height: auto;
+        position: relative;
+        line-height: 150px;
+        color: $bt-b;
+        font-family: $font-family;
+        text-align: center;
+      }
+    }
+
+    .footer {
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      /* Height of the footer */
+    }
+  }
+
+  /* Small screens */
+  @media only #{$media} and ($feature_max : $value_one) {
+    .searchResults {
+      /* On small screens, we are no longer using row direction but column */
+      flex-flow: row wrap;
+      justify-content: center;
+      flex: 0 0 100%;
+      min-height: 450px;
+
+      .searchResults-item {
+        padding: 5px;
+        width: 100%;
+        height: auto;
+        position: relative;
+        line-height: 150px;
+        color: $bt-b;
+        font-family: $font-family;
+        text-align: center;
+      }
+    }
+
+    .footer {
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      /* Height of the footer */
+    }
+  }
+}
+
+/*Footer*/
+.footer {
+  flex-shrink: 0;
+  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 20px;
+  background-color: $bt-color;
+  color: $font-hf;
+  position: static;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  /* Height of the footer */
+}
