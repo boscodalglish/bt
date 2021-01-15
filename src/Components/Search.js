@@ -3,7 +3,7 @@ import Suggestions from "./Suggestions";
 
 export function Search() {
 
-    const API_KEY = "49078030f7d04069936de5bd436959ae";
+    const API_KEY = "";
     const API_URL = `http://newsapi.org/v2/everything`;
 
     let [query, setQuery] = useState('default');
@@ -33,7 +33,7 @@ export function Search() {
                         setDataempty(false);
                     }
                 }).catch((err) => {
-                    alert("API not working! refrsh")
+                    alert("API is not working! Refresh")
                     setErrorMessage(true);
                 })
         }
